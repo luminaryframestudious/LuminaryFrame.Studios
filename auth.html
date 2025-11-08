@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuminaryFrame Studios | Login</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ========== AUTH PAGE STYLING ========== */
+    .auth-container {
+      max-width: 420px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background: linear-gradient(180deg, #121212 0%, #0b0b0b 100%);
+      border: 1px solid rgba(255, 0, 127, 0.25);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 0, 127, 0.1);
+      text-align: center;
+    }
+
+    .auth-container h2 {
+      color: #ff007f;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+    }
+
+    .auth-container p {
+      color: #aaa;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .auth-container input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.6rem 0;
+      border: none;
+      border-radius: 10px;
+      background: #1a1a1a;
+      color: #fff;
+      outline: none;
+      font-size: 1rem;
+      border: 1px solid rgba(255, 0, 127, 0.25);
+      transition: 0.3s;
+    }
+
+    .auth-container input:focus {
+      border-color: #ff007f;
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
+    }
+
+    .auth-container button {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #ff007f, #ff3399);
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+    }
+
+    .auth-container button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(255, 0, 127, 0.6);
+    }
+
+    .switch-form {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .switch-form a {
+      color: #ff007f;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .switch-form a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <h1>LuminaryFrame Studios</h1>
+    </div>
+  </nav>
+
+  <!-- AUTH CONTAINER -->
+  <div class="auth-container" id="login-container">
+    <h2>Welcome Back</h2>
+    <p>Login to your LuminaryFrame account</p>
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button id="loginBtn">Login</button>
+
+    <div class="switch-form">
+      Don’t have an account? <a id="showSignup">Sign up</a>
+    </div>
+  </div>
+
+  <!-- SIGNUP CONTAINER -->
+  <div class="auth-container" id="signup-container" style="display:none;">
+    <h2>Create Account</h2>
+    <p>Join LuminaryFrame Studios today</p>
+    <input type="email" id="signupEmail" placeholder="Email" required>
+    <input type="password" id="signupPassword" placeholder="Password" required>
+    <button id="signupBtn">Sign Up</button>
+
+    <div class="switch-form">
+      Already have an account? <a id="showLogin">Login</a>
+    </div>
+  </div>
+
+  <!-- Firebase + EmailJS -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- JS -->
+  <script src="auth.js"></script>
+</body>
+</html>

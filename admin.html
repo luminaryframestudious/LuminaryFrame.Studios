@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | LuminaryFrame Studios</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <h1>Admin Dashboard</h1>
+    </div>
+    <button class="btn" id="logoutBtn" style="position:absolute; right:20px;">Logout</button>
+  </nav>
+
+  <section class="hero">
+    <h2 class="title">Welcome, LuminaryFrame Studios</h2>
+    <p class="subtitle">Manage all client bookings and uploads here.</p>
+  </section>
+
+  <section class="card">
+    <h3>All Client Orders</h3>
+    <table id="ordersTable" style="width:100%; border-collapse: collapse; color: #fff;">
+      <thead>
+        <tr style="border-bottom: 1px solid #ff007f;">
+          <th>Name</th>
+          <th>Email</th>
+          <th>App</th>
+          <th>Type</th>
+          <th>Payment</th>
+          <th>Status</th>
+          <th>Files</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="ordersBody"></tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2025 LuminaryFrame Studios | Admin Panel</p>
+  </footer>
+
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>
